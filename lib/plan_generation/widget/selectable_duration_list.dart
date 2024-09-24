@@ -2,21 +2,19 @@ import 'package:adventure_planner/utils/constants/common_colors.dart';
 import 'package:adventure_planner/utils/utils.dart';
 import 'package:flutter/material.dart';
 
-class SelectableQuantityDayList extends StatefulWidget {
-  // Callback to send selected quantity
-
-  const SelectableQuantityDayList({
+class SelectableDurationList extends StatefulWidget {
+  const SelectableDurationList({
     required this.onQuantitySelected,
     super.key,
   });
-  final Function(int?) onQuantitySelected;
+  final void Function(int?) onQuantitySelected;
 
   @override
-  State<SelectableQuantityDayList> createState() => _SelectableQuantityDayListState();
+  State<SelectableDurationList> createState() => _SelectableDurationListState();
 }
 
-class _SelectableQuantityDayListState extends State<SelectableQuantityDayList> {
-  int? selectedDays; // Store selected days as an integer
+class _SelectableDurationListState extends State<SelectableDurationList> {
+  int? selectedDays;
   final TextEditingController _otherDaysController = TextEditingController();
 
   @override
@@ -33,17 +31,17 @@ class _SelectableQuantityDayListState extends State<SelectableQuantityDayList> {
               style: const TextStyle(fontSize: 24),
             ),
             controlAffinity: ListTileControlAffinity.trailing,
-            value: mood.days, // Use the integer value for radio
+            value: mood.days,
             groupValue: selectedDays,
             onChanged: (int? newDays) {
               setState(() {
                 selectedDays = newDays;
-                _otherDaysController.clear(); // Clear input when switching to other options
-                widget.onQuantitySelected(selectedDays); // Notify the parent with selected days
+                _otherDaysController.clear();
+                widget.onQuantitySelected(selectedDays);
               });
             },
           ),
-        if (selectedDays == 0) // Show TextField if 'Other' is selected (0 indicates Other)
+        if (selectedDays == 0)
           Padding(
             padding: const EdgeInsets.only(top: 16, right: 16),
             child: Container(
@@ -84,9 +82,9 @@ class _SelectableQuantityDayListState extends State<SelectableQuantityDayList> {
                 onChanged: (value) {
                   if (value.isNotEmpty) {
                     final days = int.tryParse(value);
-                    widget.onQuantitySelected(days); // Notify the parent with the new value
+                    widget.onQuantitySelected(days);
                   } else {
-                    widget.onQuantitySelected(null); // Clear the selection if input is empty
+                    widget.onQuantitySelected(null);
                   }
                 },
               ),

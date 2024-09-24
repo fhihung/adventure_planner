@@ -24,6 +24,7 @@ class PlanGenerationBloc extends Bloc<PlanGenerationEvent, PlanGenerationState> 
     PlanGenerationInitiated event,
     Emitter<PlanGenerationState> emit,
   ) {}
+
   FutureOr<void> _onLocationPicked(
     LocationPicked event,
     Emitter<PlanGenerationState> emit,
@@ -42,6 +43,6 @@ class PlanGenerationBloc extends Bloc<PlanGenerationEvent, PlanGenerationState> 
     TripTypePicked event,
     Emitter<PlanGenerationState> emit,
   ) {
-    emit(state.copyWith(selectedtripTypes: event.tripTypes));
+    emit(state.copyWith(selectedTripTypes: event.tripTypes));
   }
 }

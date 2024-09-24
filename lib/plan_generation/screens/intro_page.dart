@@ -1,11 +1,10 @@
+import 'package:adventure_planner/plan_generation/widget/bottom_action_bar.dart';
 import 'package:adventure_planner/plan_generation/widget/shared_appbar_hero.dart';
 import 'package:adventure_planner/utils/constants/app_spaces.dart';
 import 'package:adventure_planner/utils/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smooth_sheets/smooth_sheets.dart';
-
-import '../widget/bottom_action_bar.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});

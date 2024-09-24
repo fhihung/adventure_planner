@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PlanGenerationState {
   bool get isLoading => throw _privateConstructorUsedError;
   List<String> get selectedLocations => throw _privateConstructorUsedError;
-  List<String> get selectedtripTypes => throw _privateConstructorUsedError;
+  List<String> get selectedTripTypes => throw _privateConstructorUsedError;
   int get days => throw _privateConstructorUsedError;
 
   /// Create a copy of PlanGenerationState
@@ -37,7 +37,7 @@ abstract class $PlanGenerationStateCopyWith<$Res> {
   $Res call(
       {bool isLoading,
       List<String> selectedLocations,
-      List<String> selectedtripTypes,
+      List<String> selectedTripTypes,
       int days});
 }
 
@@ -58,7 +58,7 @@ class _$PlanGenerationStateCopyWithImpl<$Res, $Val extends PlanGenerationState>
   $Res call({
     Object? isLoading = null,
     Object? selectedLocations = null,
-    Object? selectedtripTypes = null,
+    Object? selectedTripTypes = null,
     Object? days = null,
   }) {
     return _then(_value.copyWith(
@@ -70,9 +70,9 @@ class _$PlanGenerationStateCopyWithImpl<$Res, $Val extends PlanGenerationState>
           ? _value.selectedLocations
           : selectedLocations // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      selectedtripTypes: null == selectedtripTypes
-          ? _value.selectedtripTypes
-          : selectedtripTypes // ignore: cast_nullable_to_non_nullable
+      selectedTripTypes: null == selectedTripTypes
+          ? _value.selectedTripTypes
+          : selectedTripTypes // ignore: cast_nullable_to_non_nullable
               as List<String>,
       days: null == days
           ? _value.days
@@ -93,7 +93,7 @@ abstract class _$$PlanGenerationStateImplCopyWith<$Res>
   $Res call(
       {bool isLoading,
       List<String> selectedLocations,
-      List<String> selectedtripTypes,
+      List<String> selectedTripTypes,
       int days});
 }
 
@@ -112,7 +112,7 @@ class __$$PlanGenerationStateImplCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? selectedLocations = null,
-    Object? selectedtripTypes = null,
+    Object? selectedTripTypes = null,
     Object? days = null,
   }) {
     return _then(_$PlanGenerationStateImpl(
@@ -124,9 +124,9 @@ class __$$PlanGenerationStateImplCopyWithImpl<$Res>
           ? _value._selectedLocations
           : selectedLocations // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      selectedtripTypes: null == selectedtripTypes
-          ? _value._selectedtripTypes
-          : selectedtripTypes // ignore: cast_nullable_to_non_nullable
+      selectedTripTypes: null == selectedTripTypes
+          ? _value._selectedTripTypes
+          : selectedTripTypes // ignore: cast_nullable_to_non_nullable
               as List<String>,
       days: null == days
           ? _value.days
@@ -142,10 +142,10 @@ class _$PlanGenerationStateImpl implements _PlanGenerationState {
   const _$PlanGenerationStateImpl(
       {this.isLoading = false,
       final List<String> selectedLocations = const <String>[],
-      final List<String> selectedtripTypes = const <String>[],
+      final List<String> selectedTripTypes = const <String>[],
       this.days = 3})
       : _selectedLocations = selectedLocations,
-        _selectedtripTypes = selectedtripTypes;
+        _selectedTripTypes = selectedTripTypes;
 
   @override
   @JsonKey()
@@ -160,14 +160,14 @@ class _$PlanGenerationStateImpl implements _PlanGenerationState {
     return EqualUnmodifiableListView(_selectedLocations);
   }
 
-  final List<String> _selectedtripTypes;
+  final List<String> _selectedTripTypes;
   @override
   @JsonKey()
-  List<String> get selectedtripTypes {
-    if (_selectedtripTypes is EqualUnmodifiableListView)
-      return _selectedtripTypes;
+  List<String> get selectedTripTypes {
+    if (_selectedTripTypes is EqualUnmodifiableListView)
+      return _selectedTripTypes;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_selectedtripTypes);
+    return EqualUnmodifiableListView(_selectedTripTypes);
   }
 
   @override
@@ -176,7 +176,7 @@ class _$PlanGenerationStateImpl implements _PlanGenerationState {
 
   @override
   String toString() {
-    return 'PlanGenerationState(isLoading: $isLoading, selectedLocations: $selectedLocations, selectedtripTypes: $selectedtripTypes, days: $days)';
+    return 'PlanGenerationState(isLoading: $isLoading, selectedLocations: $selectedLocations, selectedTripTypes: $selectedTripTypes, days: $days)';
   }
 
   @override
@@ -189,7 +189,7 @@ class _$PlanGenerationStateImpl implements _PlanGenerationState {
             const DeepCollectionEquality()
                 .equals(other._selectedLocations, _selectedLocations) &&
             const DeepCollectionEquality()
-                .equals(other._selectedtripTypes, _selectedtripTypes) &&
+                .equals(other._selectedTripTypes, _selectedTripTypes) &&
             (identical(other.days, days) || other.days == days));
   }
 
@@ -198,7 +198,7 @@ class _$PlanGenerationStateImpl implements _PlanGenerationState {
       runtimeType,
       isLoading,
       const DeepCollectionEquality().hash(_selectedLocations),
-      const DeepCollectionEquality().hash(_selectedtripTypes),
+      const DeepCollectionEquality().hash(_selectedTripTypes),
       days);
 
   /// Create a copy of PlanGenerationState
@@ -215,7 +215,7 @@ abstract class _PlanGenerationState implements PlanGenerationState {
   const factory _PlanGenerationState(
       {final bool isLoading,
       final List<String> selectedLocations,
-      final List<String> selectedtripTypes,
+      final List<String> selectedTripTypes,
       final int days}) = _$PlanGenerationStateImpl;
 
   @override
@@ -223,7 +223,7 @@ abstract class _PlanGenerationState implements PlanGenerationState {
   @override
   List<String> get selectedLocations;
   @override
-  List<String> get selectedtripTypes;
+  List<String> get selectedTripTypes;
   @override
   int get days;
 

@@ -7,17 +7,15 @@ import 'package:go_router/go_router.dart';
 import 'package:smooth_sheets/smooth_sheets.dart';
 
 class CommonBottomNavigation extends StatefulWidget {
-  CommonBottomNavigation({
-    super.key,
-    this.selectedIndex = 0,
-  });
+  const CommonBottomNavigation({super.key});
 
   @override
   State<CommonBottomNavigation> createState() => _CommonBottomNavigationState();
-  int selectedIndex;
 }
 
 class _CommonBottomNavigationState extends State<CommonBottomNavigation> {
+  int _selectedIndex = 0;
+
   final List<Widget> _screens = [
     const HomeScreen(),
     const HomeScreen(),
@@ -41,33 +39,32 @@ class _CommonBottomNavigationState extends State<CommonBottomNavigation> {
 
   void _onItemTapped(int index) {
     setState(() {
-      widget.selectedIndex = index;
+      _selectedIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return CupertinoStackedTransition(
-      cornerRadius: Tween(begin: 0.0, end: 16.0),
+      cornerRadius: Tween(begin: 0, end: 16),
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
-          backgroundColor: CommonColors.primary1,
+          backgroundColor: CommonColors.primary,
           onPressed: () {
-            // Hành động khi nhấn nút add
             context.go('/intro');
           },
           child: const Icon(Icons.add),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: widget.selectedIndex,
+          currentIndex: _selectedIndex,
           onTap: _onItemTapped,
           items: [
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
-                widget.selectedIndex == 0 ? _boldIconPaths[0] : _iconPaths[0],
+                _selectedIndex == 0 ? _boldIconPaths[0] : _iconPaths[0],
                 colorFilter: ColorFilter.mode(
-                  widget.selectedIndex == 0 ? CommonColors.primary1 : CommonColors.neutrals5,
+                  _selectedIndex == 0 ? CommonColors.primary : CommonColors.neutrals5,
                   BlendMode.srcIn,
                 ),
               ),
@@ -75,9 +72,9 @@ class _CommonBottomNavigationState extends State<CommonBottomNavigation> {
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
-                widget.selectedIndex == 1 ? _boldIconPaths[1] : _iconPaths[1],
+                _selectedIndex == 1 ? _boldIconPaths[1] : _iconPaths[1],
                 colorFilter: ColorFilter.mode(
-                  widget.selectedIndex == 0 ? CommonColors.neutrals5 : CommonColors.primary1,
+                  _selectedIndex == 0 ? CommonColors.neutrals5 : CommonColors.primary1,
                   BlendMode.srcIn,
                 ),
               ),
@@ -88,109 +85,8 @@ class _CommonBottomNavigationState extends State<CommonBottomNavigation> {
           unselectedItemColor: Colors.grey,
           type: BottomNavigationBarType.fixed,
         ),
-        body: _screens[widget.selectedIndex],
+        body: _screens[_selectedIndex],
       ),
     );
   }
 }
-
-// class IntroGeneratePage extends StatelessWidget {
-//   const IntroGeneratePage({
-//     super.key,
-//   });
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.symmetric(
-//         vertical: AppSpaces.space6,
-//         horizontal: AppSpaces.space5,
-//       ),
-//       child: Column(
-//         mainAxisSize: MainAxisSize.min,
-//         children: [
-//           Row(
-//             children: [
-//               GestureDetector(
-//                 onTap: () {
-//                   Navigator.pop(context);
-//                 },
-//                 child: const Icon(Icons.close),
-//               ),
-//             ],
-//           ),
-//           Padding(
-//             padding: const EdgeInsets.symmetric(
-//               horizontal: 32,
-//               vertical: 20,
-//             ),
-//             child: Column(
-//               mainAxisSize: MainAxisSize.min,
-//               children: [
-//                 const Text(
-//                   'Hello there!\n'
-//                   "I'm your AI Travel assistant. "
-//                   'Ready to create the perfect travel plan for you.',
-//                   textAlign: TextAlign.center,
-//                   style: AppTextStyle.headline4,
-//                 ),
-//                 const SizedBox(height: AppSpaces.space8),
-//                 SizedBox(
-//                   width: double.infinity,
-//                   child: ElevatedButton(
-//                     onPressed: () {
-//                       CommonModalSheet.showModalSheet(
-//                         context,
-//                         isFullScreen: false,
-//                         child: SizedBox(
-//                           width: double.infinity,
-//                           child: Padding(
-//                             padding: const EdgeInsets.symmetric(
-//                               vertical: AppSpaces.space6,
-//                               horizontal: AppSpaces.space5,
-//                             ),
-//                             child: Column(
-//                               mainAxisSize: MainAxisSize.min,
-//                               children: [
-//                                 Row(
-//                                   children: [
-//                                     GestureDetector(
-//                                       onTap: () {
-//                                         Navigator.pop(context);
-//                                       },
-//                                       child: const Icon(
-//                                         Icons.arrow_back_ios,
-//                                         color: CommonColors.neutrals1,
-//                                       ),
-//                                     ),
-//                                   ],
-//                                 ),
-//                                 const SizedBox(height: AppSpaces.space6),
-//                                 const Text(
-//                                   'Great! Where will you want to travel?',
-//                                   textAlign: TextAlign.center,
-//                                   style: AppTextStyle.headline4,
-//                                 ),
-//                               ],
-//                             ),
-//                           ),
-//                         ),
-//                       );
-//                     },
-//                     child: const Text('Continue'),
-//                   ),
-//                 ),
-//                 TextButton(
-//                   onPressed: () {
-//                     Navigator.pop(context);
-//                   },
-//                   child: const Text('No, thanks'),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }

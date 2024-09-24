@@ -54,8 +54,8 @@ class ConfirmPage extends StatelessWidget {
                             for (final genre in state.selectedLocations)
                               FilterChip(
                                 checkmarkColor: Colors.white,
-                                selectedColor: PrimaryColors.baseDarkMode, // Màu khi được chọn
-                                backgroundColor: CommonColors.neutrals7, //
+                                selectedColor: PrimaryColors.baseDarkMode,
+                                backgroundColor: CommonColors.neutrals7,
                                 label: DefaultTextStyle(
                                   style: const TextStyle(color: Colors.white),
                                   child: Text(genre),
@@ -83,7 +83,7 @@ class ConfirmPage extends StatelessWidget {
                       ),
                       RadioListTile(
                         activeColor: CommonColors.primary,
-                        title: Text('${state.days.toString()} Days'),
+                        title: Text('${state.days} Days'),
                         secondary: const Text(
                           '🎉',
                           style: TextStyle(fontSize: 24),
@@ -104,18 +104,19 @@ class ConfirmPage extends StatelessWidget {
                           style: AppTextStyle.hairline1,
                         ),
                         trailing: IconButton(
-                            onPressed: () => context.go('/intro/location//seed-track'),
-                            icon: Assets.icons.linear.svg.edit.svg()),
+                          onPressed: () => context.go('/intro/location//seed-track'),
+                          icon: Assets.icons.linear.svg.edit.svg(),
+                        ),
                       ),
                     ],
                   ),
                 ),
                 SliverList.builder(
-                  itemCount: state.selectedtripTypes.length,
+                  itemCount: state.selectedTripTypes.length,
                   itemBuilder: (context, index) {
                     return CheckboxListTile(
                       checkColor: CommonColors.primary,
-                      title: Text(state.selectedtripTypes[index]),
+                      title: Text(state.selectedTripTypes[index]),
                       value: true,
                       onChanged: (_) {},
                     );
@@ -128,7 +129,7 @@ class ConfirmPage extends StatelessWidget {
             label: "OK, let's go!",
             showDivider: true,
             onPressed: () async {
-              context.go('/intro/location/quantity-day/trip-type/confirm/generate');
+              context.go('/intro/location/duration/trip-type/confirm/generate');
               await Future<void>.delayed(const Duration(seconds: 2));
               if (context.mounted) {
                 context.go('/');

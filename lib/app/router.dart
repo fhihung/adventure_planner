@@ -27,7 +27,6 @@ final router = GoRouter(
   ],
 );
 
-// A ShellRoute is used to create a new Navigator for nested navigation in the sheet.
 final _sheetShellRoute = ShellRoute(
   observers: [sheetTransitionObserver],
   pageBuilder: (context, state, navigator) {
@@ -59,7 +58,7 @@ final _chooseLocationRoute = GoRoute(
 );
 
 final _selectQuantityDayRoute = GoRoute(
-  path: 'quantity-day',
+  path: 'duration',
   pageBuilder: (context, state) {
     return const DraggableNavigationSheetPage(child: SelectQuantityDayPage());
   },
@@ -139,7 +138,7 @@ class _SheetShell extends StatelessWidget {
       bottom: false,
       child: PopScope(
         canPop: false,
-        onPopInvoked: (didPop) async {
+        onPopInvokedWithResult: (didPop, result) async {
           if (!didPop) {
             final shouldPop = await showCancelDialog() ?? false;
             if (shouldPop && context.mounted) {
@@ -150,7 +149,6 @@ class _SheetShell extends StatelessWidget {
         child: NavigationSheet(
           transitionObserver: sheetTransitionObserver,
           child: Material(
-            // Add circular corners to the sheet.
             borderRadius: BorderRadius.circular(16),
             clipBehavior: Clip.antiAlias,
             child: navigator,

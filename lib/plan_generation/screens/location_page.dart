@@ -15,7 +15,7 @@ class LocationPage extends StatefulWidget {
   const LocationPage({super.key});
 
   @override
-  _LocationPageState createState() => _LocationPageState();
+  State<LocationPage> createState() => _LocationPageState();
 }
 
 class _LocationPageState extends State<LocationPage> {
@@ -35,8 +35,7 @@ class _LocationPageState extends State<LocationPage> {
     context.read<PlanGenerationBloc>().add(
           LocationPicked(_selectedLocations),
         );
-    print('Selected locations: $_selectedLocations');
-    context.go('/intro/location/quantity-day');
+    context.go('/intro/location/duration');
   }
 
   @override
