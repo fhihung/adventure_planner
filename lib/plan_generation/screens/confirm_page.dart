@@ -66,7 +66,11 @@ class ConfirmPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const Divider(height: 32),
+                      const Divider(
+                        height: 32,
+                        thickness: 1,
+                        endIndent: 32,
+                      ),
                       ListTile(
                         title: const Text(
                           'Days',
@@ -89,7 +93,11 @@ class ConfirmPage extends StatelessWidget {
                         groupValue: '',
                         onChanged: (_) {},
                       ),
-                      const SizedBox(height: 32),
+                      const Divider(
+                        height: 32,
+                        thickness: 1,
+                        endIndent: 32,
+                      ),
                       ListTile(
                         title: const Text(
                           'Type of travel',
@@ -120,7 +128,7 @@ class ConfirmPage extends StatelessWidget {
             label: "OK, let's go!",
             showDivider: true,
             onPressed: () async {
-              context.go('/intro/genre/mood/seed-track/confirm/generate');
+              context.go('/intro/location/quantity-day/trip-type/confirm/generate');
               await Future<void>.delayed(const Duration(seconds: 2));
               if (context.mounted) {
                 context.go('/');
