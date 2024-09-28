@@ -5,12 +5,18 @@ class BottomActionBar extends StatelessWidget {
   const BottomActionBar({
     required this.label,
     required this.onPressed,
+    this.secondLabel,
+    this.secondText, // Optional second tappable text (e.g., "Login")
+    this.secondOnPressed,
     super.key,
     this.showDivider = false,
   });
 
   final String label;
   final VoidCallback? onPressed;
+  final String? secondLabel; // Optional label (e.g., "Already have an account?")
+  final String? secondText; // Optional tappable text (e.g., "Login")
+  final VoidCallback? secondOnPressed; // Optional action for tappable text
   final bool showDivider;
 
   @override
@@ -44,6 +50,34 @@ class BottomActionBar extends StatelessWidget {
                   ),
                 ),
               ),
+              if (secondLabel != null && secondText != null && secondOnPressed != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        secondLabel!,
+                        style: const TextStyle(
+                          color: Colors.black, // Black color for "Already have an account?"
+                          fontSize: 16,
+                        ),
+                      ),
+                      const SizedBox(width: 4), // Spacing between text and button
+                      GestureDetector(
+                        onTap: secondOnPressed,
+                        child: Text(
+                          secondText!, // Customizable tappable text
+                          style: TextStyle(
+                            color: Theme.of(context).primaryColor, // Blue color for tappable text
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
             ],
           ),
         ),

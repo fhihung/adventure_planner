@@ -17,9 +17,17 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$PlanGenerationState {
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get isGenerating => throw _privateConstructorUsedError;
   List<String> get selectedLocations => throw _privateConstructorUsedError;
   List<String> get selectedTripTypes => throw _privateConstructorUsedError;
   int get days => throw _privateConstructorUsedError;
+  String get budget => throw _privateConstructorUsedError;
+  String get currentLocation => throw _privateConstructorUsedError;
+  String get numPeople => throw _privateConstructorUsedError;
+  String get model => throw _privateConstructorUsedError;
+  MResponse? get response => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get responseContent =>
+      throw _privateConstructorUsedError;
 
   /// Create a copy of PlanGenerationState
   /// with the given fields replaced by the non-null parameter values.
@@ -36,9 +44,16 @@ abstract class $PlanGenerationStateCopyWith<$Res> {
   @useResult
   $Res call(
       {bool isLoading,
+      bool isGenerating,
       List<String> selectedLocations,
       List<String> selectedTripTypes,
-      int days});
+      int days,
+      String budget,
+      String currentLocation,
+      String numPeople,
+      String model,
+      MResponse? response,
+      Map<String, dynamic>? responseContent});
 }
 
 /// @nodoc
@@ -57,14 +72,25 @@ class _$PlanGenerationStateCopyWithImpl<$Res, $Val extends PlanGenerationState>
   @override
   $Res call({
     Object? isLoading = null,
+    Object? isGenerating = null,
     Object? selectedLocations = null,
     Object? selectedTripTypes = null,
     Object? days = null,
+    Object? budget = null,
+    Object? currentLocation = null,
+    Object? numPeople = null,
+    Object? model = null,
+    Object? response = freezed,
+    Object? responseContent = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerating: null == isGenerating
+          ? _value.isGenerating
+          : isGenerating // ignore: cast_nullable_to_non_nullable
               as bool,
       selectedLocations: null == selectedLocations
           ? _value.selectedLocations
@@ -78,6 +104,30 @@ class _$PlanGenerationStateCopyWithImpl<$Res, $Val extends PlanGenerationState>
           ? _value.days
           : days // ignore: cast_nullable_to_non_nullable
               as int,
+      budget: null == budget
+          ? _value.budget
+          : budget // ignore: cast_nullable_to_non_nullable
+              as String,
+      currentLocation: null == currentLocation
+          ? _value.currentLocation
+          : currentLocation // ignore: cast_nullable_to_non_nullable
+              as String,
+      numPeople: null == numPeople
+          ? _value.numPeople
+          : numPeople // ignore: cast_nullable_to_non_nullable
+              as String,
+      model: null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as String,
+      response: freezed == response
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as MResponse?,
+      responseContent: freezed == responseContent
+          ? _value.responseContent
+          : responseContent // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 }
@@ -92,9 +142,16 @@ abstract class _$$PlanGenerationStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {bool isLoading,
+      bool isGenerating,
       List<String> selectedLocations,
       List<String> selectedTripTypes,
-      int days});
+      int days,
+      String budget,
+      String currentLocation,
+      String numPeople,
+      String model,
+      MResponse? response,
+      Map<String, dynamic>? responseContent});
 }
 
 /// @nodoc
@@ -111,14 +168,25 @@ class __$$PlanGenerationStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = null,
+    Object? isGenerating = null,
     Object? selectedLocations = null,
     Object? selectedTripTypes = null,
     Object? days = null,
+    Object? budget = null,
+    Object? currentLocation = null,
+    Object? numPeople = null,
+    Object? model = null,
+    Object? response = freezed,
+    Object? responseContent = freezed,
   }) {
     return _then(_$PlanGenerationStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isGenerating: null == isGenerating
+          ? _value.isGenerating
+          : isGenerating // ignore: cast_nullable_to_non_nullable
               as bool,
       selectedLocations: null == selectedLocations
           ? _value._selectedLocations
@@ -132,6 +200,30 @@ class __$$PlanGenerationStateImplCopyWithImpl<$Res>
           ? _value.days
           : days // ignore: cast_nullable_to_non_nullable
               as int,
+      budget: null == budget
+          ? _value.budget
+          : budget // ignore: cast_nullable_to_non_nullable
+              as String,
+      currentLocation: null == currentLocation
+          ? _value.currentLocation
+          : currentLocation // ignore: cast_nullable_to_non_nullable
+              as String,
+      numPeople: null == numPeople
+          ? _value.numPeople
+          : numPeople // ignore: cast_nullable_to_non_nullable
+              as String,
+      model: null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as String,
+      response: freezed == response
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as MResponse?,
+      responseContent: freezed == responseContent
+          ? _value._responseContent
+          : responseContent // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -141,15 +233,26 @@ class __$$PlanGenerationStateImplCopyWithImpl<$Res>
 class _$PlanGenerationStateImpl implements _PlanGenerationState {
   const _$PlanGenerationStateImpl(
       {this.isLoading = false,
+      this.isGenerating = false,
       final List<String> selectedLocations = const <String>[],
       final List<String> selectedTripTypes = const <String>[],
-      this.days = 3})
+      this.days = 3,
+      this.budget = '',
+      this.currentLocation = '',
+      this.numPeople = '',
+      this.model = '',
+      this.response,
+      final Map<String, dynamic>? responseContent})
       : _selectedLocations = selectedLocations,
-        _selectedTripTypes = selectedTripTypes;
+        _selectedTripTypes = selectedTripTypes,
+        _responseContent = responseContent;
 
   @override
   @JsonKey()
   final bool isLoading;
+  @override
+  @JsonKey()
+  final bool isGenerating;
   final List<String> _selectedLocations;
   @override
   @JsonKey()
@@ -173,10 +276,33 @@ class _$PlanGenerationStateImpl implements _PlanGenerationState {
   @override
   @JsonKey()
   final int days;
+  @override
+  @JsonKey()
+  final String budget;
+  @override
+  @JsonKey()
+  final String currentLocation;
+  @override
+  @JsonKey()
+  final String numPeople;
+  @override
+  @JsonKey()
+  final String model;
+  @override
+  final MResponse? response;
+  final Map<String, dynamic>? _responseContent;
+  @override
+  Map<String, dynamic>? get responseContent {
+    final value = _responseContent;
+    if (value == null) return null;
+    if (_responseContent is EqualUnmodifiableMapView) return _responseContent;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
-    return 'PlanGenerationState(isLoading: $isLoading, selectedLocations: $selectedLocations, selectedTripTypes: $selectedTripTypes, days: $days)';
+    return 'PlanGenerationState(isLoading: $isLoading, isGenerating: $isGenerating, selectedLocations: $selectedLocations, selectedTripTypes: $selectedTripTypes, days: $days, budget: $budget, currentLocation: $currentLocation, numPeople: $numPeople, model: $model, response: $response, responseContent: $responseContent)';
   }
 
   @override
@@ -186,20 +312,39 @@ class _$PlanGenerationStateImpl implements _PlanGenerationState {
             other is _$PlanGenerationStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
+            (identical(other.isGenerating, isGenerating) ||
+                other.isGenerating == isGenerating) &&
             const DeepCollectionEquality()
                 .equals(other._selectedLocations, _selectedLocations) &&
             const DeepCollectionEquality()
                 .equals(other._selectedTripTypes, _selectedTripTypes) &&
-            (identical(other.days, days) || other.days == days));
+            (identical(other.days, days) || other.days == days) &&
+            (identical(other.budget, budget) || other.budget == budget) &&
+            (identical(other.currentLocation, currentLocation) ||
+                other.currentLocation == currentLocation) &&
+            (identical(other.numPeople, numPeople) ||
+                other.numPeople == numPeople) &&
+            (identical(other.model, model) || other.model == model) &&
+            (identical(other.response, response) ||
+                other.response == response) &&
+            const DeepCollectionEquality()
+                .equals(other._responseContent, _responseContent));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       isLoading,
+      isGenerating,
       const DeepCollectionEquality().hash(_selectedLocations),
       const DeepCollectionEquality().hash(_selectedTripTypes),
-      days);
+      days,
+      budget,
+      currentLocation,
+      numPeople,
+      model,
+      response,
+      const DeepCollectionEquality().hash(_responseContent));
 
   /// Create a copy of PlanGenerationState
   /// with the given fields replaced by the non-null parameter values.
@@ -214,18 +359,39 @@ class _$PlanGenerationStateImpl implements _PlanGenerationState {
 abstract class _PlanGenerationState implements PlanGenerationState {
   const factory _PlanGenerationState(
       {final bool isLoading,
+      final bool isGenerating,
       final List<String> selectedLocations,
       final List<String> selectedTripTypes,
-      final int days}) = _$PlanGenerationStateImpl;
+      final int days,
+      final String budget,
+      final String currentLocation,
+      final String numPeople,
+      final String model,
+      final MResponse? response,
+      final Map<String, dynamic>? responseContent}) = _$PlanGenerationStateImpl;
 
   @override
   bool get isLoading;
+  @override
+  bool get isGenerating;
   @override
   List<String> get selectedLocations;
   @override
   List<String> get selectedTripTypes;
   @override
   int get days;
+  @override
+  String get budget;
+  @override
+  String get currentLocation;
+  @override
+  String get numPeople;
+  @override
+  String get model;
+  @override
+  MResponse? get response;
+  @override
+  Map<String, dynamic>? get responseContent;
 
   /// Create a copy of PlanGenerationState
   /// with the given fields replaced by the non-null parameter values.

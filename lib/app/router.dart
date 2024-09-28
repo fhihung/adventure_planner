@@ -1,15 +1,21 @@
 import 'dart:async';
 
 import 'package:adventure_planner/login/screens/login_screen.dart';
+import 'package:adventure_planner/login/widgets/login_form.dart';
+import 'package:adventure_planner/plan_generation/screens/complete_page.dart';
 import 'package:adventure_planner/plan_generation/screens/confirm_page.dart';
+import 'package:adventure_planner/plan_generation/screens/current_location.dart';
 import 'package:adventure_planner/plan_generation/screens/generating_page.dart';
 import 'package:adventure_planner/plan_generation/screens/intro_page.dart';
 import 'package:adventure_planner/plan_generation/screens/location_page.dart';
 import 'package:adventure_planner/plan_generation/screens/quantity_day_page.dart';
 import 'package:adventure_planner/plan_generation/screens/trip_type_page.dart';
+import 'package:adventure_planner/sign_up/pages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smooth_sheets/smooth_sheets.dart';
+
+import 'common_bottom_navigation.dart';
 
 // ----------------------------------------------------------
 // Routes
@@ -22,7 +28,7 @@ final router = GoRouter(
     GoRoute(
       path: '/',
       builder: (context, state) => const LoginScreen(),
-      routes: [_sheetShellRoute],
+      routes: [_sheetShellRoute, _loginRoute, _signUpRoute],
     ),
   ],
 );
@@ -39,7 +45,35 @@ final _sheetShellRoute = ShellRoute(
       ),
     );
   },
-  routes: [_introRoute],
+  routes: [_introRoute, _loginRoute, _signUpRoute],
+);
+
+final _loginRoute = GoRoute(
+  path: 'login',
+  pageBuilder: (context, state) {
+    return const DraggableNavigationSheetPage(child: LoginForm());
+  },
+  routes: [_signUpRoute, _introRoute, _bottomNavigation],
+);
+
+final _signUpRoute = GoRoute(
+  path: 'sign_up',
+  pageBuilder: (context, state) {
+    return const DraggableNavigationSheetPage(child: SignUpPage());
+  },
+  routes: [
+    _introRoute,
+  ],
+);
+final _bottomNavigation = GoRoute(
+  path: 'bottom_navigation',
+  builder: (context, state) {
+    return const CommonBottomNavigation();
+  },
+  routes: [
+    _introRoute,
+    _signUpRoute,
+  ],
 );
 
 final _introRoute = GoRoute(
@@ -47,7 +81,19 @@ final _introRoute = GoRoute(
   pageBuilder: (context, state) {
     return const DraggableNavigationSheetPage(child: IntroPage());
   },
-  routes: [_chooseLocationRoute],
+  routes: [_chooseLocationRoute, _chooseCurrentLocationRoute],
+);
+
+final _chooseCurrentLocationRoute = GoRoute(
+  path: 'current_location',
+  pageBuilder: (context, state) {
+    return const ScrollableNavigationSheetPage(
+      child: SheetKeyboardDismissible(
+        dismissBehavior: SheetKeyboardDismissBehavior.onDragDown(),
+        child: CurrentLocationPage(),
+      ),
+    );
+  },
 );
 final _chooseLocationRoute = GoRoute(
   path: 'location',
@@ -66,9 +112,11 @@ final _selectQuantityDayRoute = GoRoute(
 );
 
 final _tripTypeRoute = GoRoute(
-  path: 'trip-type',
+  path: 'trip_type',
   pageBuilder: (context, state) {
-    return const DraggableNavigationSheetPage(child: TripTypePage());
+    return const DraggableNavigationSheetPage(
+      child: TripTypePage(),
+    );
   },
   routes: [_confirmRoute],
 );
@@ -85,13 +133,27 @@ final _confirmRoute = GoRoute(
       child: ConfirmPage(),
     );
   },
-  routes: [_generateRoute],
+  routes: [_generateRoute, _completeRoute],
 );
 
 final _generateRoute = GoRoute(
   path: 'generate',
   pageBuilder: (context, state) {
     return const DraggableNavigationSheetPage(child: GeneratingPage());
+  },
+  routes: [_completeRoute],
+);
+final _completeRoute = GoRoute(
+  path: 'complete',
+  pageBuilder: (context, state) {
+    return const ScrollableNavigationSheetPage(
+      initialExtent: Extent.proportional(0.7),
+      minExtent: Extent.proportional(0.7),
+      physics: BouncingSheetPhysics(
+        parent: SnappingSheetPhysics(),
+      ),
+      child: CompletePage(),
+    );
   },
 );
 

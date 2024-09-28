@@ -13,6 +13,8 @@ class MTransactionGroup {
     this.totalBalance,
   });
 
+  factory MTransactionGroup.fromJson(Map<String, dynamic> json) => _$MTransactionGroupFromJson(json);
+
   String? date;
   List<MTransaction>? transactions;
   @JsonKey(name: 'total_expense')
@@ -23,6 +25,4 @@ class MTransactionGroup {
   double? totalBalance;
 
   Map<String, dynamic> toJson() => _$MTransactionGroupToJson(this);
-
-  factory MTransactionGroup.fromJson(Map<String, dynamic> json) => _$MTransactionGroupFromJson(json);
 }

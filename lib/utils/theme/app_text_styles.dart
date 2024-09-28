@@ -35,7 +35,6 @@ abstract class AppTextStyle {
     height: 1,
     fontWeight: FontWeight.w700,
     letterSpacing: -1.92,
-    package: _fontPackage,
   );
 
   /// headline1 figma style properties
@@ -52,7 +51,6 @@ abstract class AppTextStyle {
     height: 1,
     fontWeight: FontWeight.w700,
     letterSpacing: -1.28,
-    package: _fontPackage,
   );
 
   /// headline2 figma style properties
@@ -69,7 +67,6 @@ abstract class AppTextStyle {
     height: 1.17,
     fontWeight: FontWeight.w700,
     letterSpacing: -0.96,
-    package: _fontPackage,
   );
 
   /// headline3 figma style properties
@@ -86,7 +83,6 @@ abstract class AppTextStyle {
     height: 1.2,
     fontWeight: FontWeight.w700,
     letterSpacing: -0.4,
-    package: _fontPackage,
   );
 
   /// headline4 figma style properties
@@ -103,7 +99,6 @@ abstract class AppTextStyle {
     height: 1.25,
     fontWeight: FontWeight.w700,
     letterSpacing: -0.32,
-    package: _fontPackage,
   );
 
   /// body1 figma style properties
@@ -120,7 +115,6 @@ abstract class AppTextStyle {
     height: 1.33,
     fontWeight: FontWeight.w400,
     letterSpacing: -0.24,
-    package: _fontPackage,
   );
 
   /// body1Bold figma style properties
@@ -136,7 +130,6 @@ abstract class AppTextStyle {
     fontSize: 24,
     height: 1.33,
     fontWeight: FontWeight.w600,
-    package: _fontPackage,
   );
 
   /// body2 figma style properties
@@ -152,7 +145,6 @@ abstract class AppTextStyle {
     fontSize: 16,
     height: 1.5,
     fontWeight: FontWeight.w400,
-    package: _fontPackage,
   );
 
   /// body2Bold figma style properties
@@ -168,7 +160,6 @@ abstract class AppTextStyle {
     fontSize: 16,
     height: 1.5,
     fontWeight: FontWeight.w500,
-    package: _fontPackage,
   );
 
   /// caption figma style properties
@@ -184,7 +175,6 @@ abstract class AppTextStyle {
     fontSize: 14,
     height: 1.71,
     fontWeight: FontWeight.w400,
-    package: _fontPackage,
   );
 
   /// captionBold figma style properties
@@ -200,7 +190,6 @@ abstract class AppTextStyle {
     fontSize: 14,
     height: 1.71,
     fontWeight: FontWeight.w500,
-    package: _fontPackage,
   );
 
   /// caption2 figma style properties
@@ -216,7 +205,6 @@ abstract class AppTextStyle {
     fontSize: 12,
     height: 1.67,
     fontWeight: FontWeight.w400,
-    package: _fontPackage,
   );
 
   /// caption2Bold figma style properties
@@ -232,7 +220,6 @@ abstract class AppTextStyle {
     fontSize: 12,
     height: 1.67,
     fontWeight: FontWeight.w600,
-    package: _fontPackage,
   );
 
   /// hairline1 figma style properties
@@ -248,7 +235,6 @@ abstract class AppTextStyle {
     fontSize: 16,
     height: 1,
     fontWeight: FontWeight.w700,
-    package: _fontPackage,
   );
 
   /// hairline2 figma style properties
@@ -264,7 +250,6 @@ abstract class AppTextStyle {
     fontSize: 12,
     height: 1,
     fontWeight: FontWeight.w700,
-    package: _fontPackage,
   );
 
   /// button1 figma style properties
@@ -280,7 +265,6 @@ abstract class AppTextStyle {
     fontSize: 16,
     height: 1,
     fontWeight: FontWeight.w700,
-    package: _fontPackage,
   );
 
   /// button2 figma style properties
@@ -296,6 +280,5 @@ abstract class AppTextStyle {
     fontSize: 14,
     height: 1.14,
     fontWeight: FontWeight.w700,
-    package: _fontPackage,
   );
 }

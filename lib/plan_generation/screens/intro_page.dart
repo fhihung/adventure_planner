@@ -15,7 +15,7 @@ class IntroPage extends StatelessWidget {
       bottomBar: BottomActionBar(
         label: 'Get started',
         onPressed: () {
-          context.go('/intro/location');
+          context.go('/intro/current_location');
         },
       ),
       appBar: SharedAppBarHero(

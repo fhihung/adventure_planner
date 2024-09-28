@@ -1,7 +1,6 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:adventure_planner/models/m_account.dart';
 import 'package:adventure_planner/models/m_category.dart';
-
-import 'm_account.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'm_transaction.g.dart';
 

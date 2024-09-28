@@ -139,4 +139,9 @@ abstract class CommonColors {
   /// hex: #18191d
   /// opacity: 1
   static const Color neutral230 = Color(0xff18191d);
+
+  /// errorColor figma style properties
+  /// hex: #B00020
+  /// opacity: 1
+  static const Color errorColor = Color(0xFFFF3B3B);
 }

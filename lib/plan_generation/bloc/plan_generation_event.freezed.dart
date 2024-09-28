@@ -87,6 +87,177 @@ abstract class _PlanGenerationInitiated implements PlanGenerationInitiated {
 }
 
 /// @nodoc
+mixin _$CurrentLocationPicked {
+  String get currentLocation => throw _privateConstructorUsedError;
+  String get budget => throw _privateConstructorUsedError;
+  String get numPeople => throw _privateConstructorUsedError;
+
+  /// Create a copy of CurrentLocationPicked
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $CurrentLocationPickedCopyWith<CurrentLocationPicked> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CurrentLocationPickedCopyWith<$Res> {
+  factory $CurrentLocationPickedCopyWith(CurrentLocationPicked value,
+          $Res Function(CurrentLocationPicked) then) =
+      _$CurrentLocationPickedCopyWithImpl<$Res, CurrentLocationPicked>;
+  @useResult
+  $Res call({String currentLocation, String budget, String numPeople});
+}
+
+/// @nodoc
+class _$CurrentLocationPickedCopyWithImpl<$Res,
+        $Val extends CurrentLocationPicked>
+    implements $CurrentLocationPickedCopyWith<$Res> {
+  _$CurrentLocationPickedCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of CurrentLocationPicked
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currentLocation = null,
+    Object? budget = null,
+    Object? numPeople = null,
+  }) {
+    return _then(_value.copyWith(
+      currentLocation: null == currentLocation
+          ? _value.currentLocation
+          : currentLocation // ignore: cast_nullable_to_non_nullable
+              as String,
+      budget: null == budget
+          ? _value.budget
+          : budget // ignore: cast_nullable_to_non_nullable
+              as String,
+      numPeople: null == numPeople
+          ? _value.numPeople
+          : numPeople // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$CurrentLocationPickedImplCopyWith<$Res>
+    implements $CurrentLocationPickedCopyWith<$Res> {
+  factory _$$CurrentLocationPickedImplCopyWith(
+          _$CurrentLocationPickedImpl value,
+          $Res Function(_$CurrentLocationPickedImpl) then) =
+      __$$CurrentLocationPickedImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String currentLocation, String budget, String numPeople});
+}
+
+/// @nodoc
+class __$$CurrentLocationPickedImplCopyWithImpl<$Res>
+    extends _$CurrentLocationPickedCopyWithImpl<$Res,
+        _$CurrentLocationPickedImpl>
+    implements _$$CurrentLocationPickedImplCopyWith<$Res> {
+  __$$CurrentLocationPickedImplCopyWithImpl(_$CurrentLocationPickedImpl _value,
+      $Res Function(_$CurrentLocationPickedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CurrentLocationPicked
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currentLocation = null,
+    Object? budget = null,
+    Object? numPeople = null,
+  }) {
+    return _then(_$CurrentLocationPickedImpl(
+      null == currentLocation
+          ? _value.currentLocation
+          : currentLocation // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == budget
+          ? _value.budget
+          : budget // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == numPeople
+          ? _value.numPeople
+          : numPeople // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CurrentLocationPickedImpl implements _CurrentLocationPicked {
+  const _$CurrentLocationPickedImpl(
+      this.currentLocation, this.budget, this.numPeople);
+
+  @override
+  final String currentLocation;
+  @override
+  final String budget;
+  @override
+  final String numPeople;
+
+  @override
+  String toString() {
+    return 'CurrentLocationPicked(currentLocation: $currentLocation, budget: $budget, numPeople: $numPeople)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CurrentLocationPickedImpl &&
+            (identical(other.currentLocation, currentLocation) ||
+                other.currentLocation == currentLocation) &&
+            (identical(other.budget, budget) || other.budget == budget) &&
+            (identical(other.numPeople, numPeople) ||
+                other.numPeople == numPeople));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, currentLocation, budget, numPeople);
+
+  /// Create a copy of CurrentLocationPicked
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CurrentLocationPickedImplCopyWith<_$CurrentLocationPickedImpl>
+      get copyWith => __$$CurrentLocationPickedImplCopyWithImpl<
+          _$CurrentLocationPickedImpl>(this, _$identity);
+}
+
+abstract class _CurrentLocationPicked implements CurrentLocationPicked {
+  const factory _CurrentLocationPicked(
+      final String currentLocation,
+      final String budget,
+      final String numPeople) = _$CurrentLocationPickedImpl;
+
+  @override
+  String get currentLocation;
+  @override
+  String get budget;
+  @override
+  String get numPeople;
+
+  /// Create a copy of CurrentLocationPicked
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CurrentLocationPickedImplCopyWith<_$CurrentLocationPickedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$LocationPicked {
   List<String> get locations => throw _privateConstructorUsedError;
 
@@ -488,5 +659,135 @@ abstract class _TripTypePicked implements TripTypePicked {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TripTypePickedImplCopyWith<_$TripTypePickedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$PlanGeneratePressed {
+  BuildContext get context => throw _privateConstructorUsedError;
+
+  /// Create a copy of PlanGeneratePressed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $PlanGeneratePressedCopyWith<PlanGeneratePressed> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PlanGeneratePressedCopyWith<$Res> {
+  factory $PlanGeneratePressedCopyWith(
+          PlanGeneratePressed value, $Res Function(PlanGeneratePressed) then) =
+      _$PlanGeneratePressedCopyWithImpl<$Res, PlanGeneratePressed>;
+  @useResult
+  $Res call({BuildContext context});
+}
+
+/// @nodoc
+class _$PlanGeneratePressedCopyWithImpl<$Res, $Val extends PlanGeneratePressed>
+    implements $PlanGeneratePressedCopyWith<$Res> {
+  _$PlanGeneratePressedCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of PlanGeneratePressed
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? context = null,
+  }) {
+    return _then(_value.copyWith(
+      context: null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$PlanGeneratePressedImplCopyWith<$Res>
+    implements $PlanGeneratePressedCopyWith<$Res> {
+  factory _$$PlanGeneratePressedImplCopyWith(_$PlanGeneratePressedImpl value,
+          $Res Function(_$PlanGeneratePressedImpl) then) =
+      __$$PlanGeneratePressedImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({BuildContext context});
+}
+
+/// @nodoc
+class __$$PlanGeneratePressedImplCopyWithImpl<$Res>
+    extends _$PlanGeneratePressedCopyWithImpl<$Res, _$PlanGeneratePressedImpl>
+    implements _$$PlanGeneratePressedImplCopyWith<$Res> {
+  __$$PlanGeneratePressedImplCopyWithImpl(_$PlanGeneratePressedImpl _value,
+      $Res Function(_$PlanGeneratePressedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PlanGeneratePressed
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? context = null,
+  }) {
+    return _then(_$PlanGeneratePressedImpl(
+      context: null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PlanGeneratePressedImpl implements _PlanGeneratePressed {
+  const _$PlanGeneratePressedImpl({required this.context});
+
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'PlanGeneratePressed(context: $context)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PlanGeneratePressedImpl &&
+            (identical(other.context, context) || other.context == context));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, context);
+
+  /// Create a copy of PlanGeneratePressed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PlanGeneratePressedImplCopyWith<_$PlanGeneratePressedImpl> get copyWith =>
+      __$$PlanGeneratePressedImplCopyWithImpl<_$PlanGeneratePressedImpl>(
+          this, _$identity);
+}
+
+abstract class _PlanGeneratePressed implements PlanGeneratePressed {
+  const factory _PlanGeneratePressed({required final BuildContext context}) =
+      _$PlanGeneratePressedImpl;
+
+  @override
+  BuildContext get context;
+
+  /// Create a copy of PlanGeneratePressed
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PlanGeneratePressedImplCopyWith<_$PlanGeneratePressedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

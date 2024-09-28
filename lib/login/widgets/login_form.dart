@@ -1,6 +1,6 @@
 import 'package:adventure_planner/app/common_bottom_navigation.dart';
-import 'package:adventure_planner/common/common_divider.dart';
-import 'package:adventure_planner/login/widgets/social_buttons.dart';
+import 'package:adventure_planner/common/modal_sheet/show_modal_sheet.dart';
+import 'package:adventure_planner/sign_up/pages/sign_up_page.dart';
 import 'package:adventure_planner/utils/constants/common_colors.dart';
 import 'package:adventure_planner/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -137,7 +137,10 @@ class LoginForm extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute<void>(
-                      builder: (context) => CommonBottomNavigation(),
+                      builder: (context) => const PopScope(
+                        canPop: false, // Chặn nút back và vuốt để quay lại
+                        child: CommonBottomNavigation(),
+                      ),
                     ),
                   );
                 },
@@ -160,30 +163,16 @@ class LoginForm extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute<void>(
-                    //     builder: (context) => const SignUpScreen(),
-                    //   ),
-                    // );
+                    CommonModalSheet.showModalSheet(
+                      context,
+                      isFullScreen: false,
+                      child: const SignUpPage(),
+                    );
                   },
                   child: const Text(S.createAccount, style: AppTextStyle.caption2Bold),
                 ),
               ],
             ),
-            const SizedBox(
-              height: AppSpaces.space7,
-            ),
-
-            /// Divider
-            const CommonDivider(text: 'OR'),
-
-            const SizedBox(
-              height: AppSpaces.space7,
-            ),
-
-            /// Sign Up with Social Account
-            const SocialButtons(),
           ],
         ),
       ),

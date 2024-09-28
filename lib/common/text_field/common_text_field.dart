@@ -85,7 +85,7 @@ class _CommonTextFieldState extends State<CommonTextField> {
         counterStyle: widget.maxLength != null && _currentTextLength == widget.maxLength
             ? const TextStyle(color: CommonColors.neutrals2)
             : const TextStyle(color: CommonColors.neutrals2),
-        contentPadding: EdgeInsets.only(
+        contentPadding: const EdgeInsets.only(
           left: 10,
         ),
         labelText: widget.labelText,

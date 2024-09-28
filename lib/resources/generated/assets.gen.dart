@@ -64,15 +64,39 @@ class $AssetsIconsBoldSvgGen {
   /// File path: assets/icons/bold/svg/home.svg
   SvgGenImage get home => const SvgGenImage('assets/icons/bold/svg/home.svg');
 
+  /// File path: assets/icons/bold/svg/location.svg
+  SvgGenImage get location => const SvgGenImage('assets/icons/bold/svg/location.svg');
+
   /// File path: assets/icons/bold/svg/setting.svg
   SvgGenImage get setting => const SvgGenImage('assets/icons/bold/svg/setting.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [edit, home, setting];
+  List<SvgGenImage> get values => [edit, home, location, setting];
 }
 
 class $AssetsIconsLinearSvgGen {
   const $AssetsIconsLinearSvgGen();
+
+  /// File path: assets/icons/linear/svg/archive-add.svg
+  SvgGenImage get archiveAdd => const SvgGenImage('assets/icons/linear/svg/archive-add.svg');
+
+  /// File path: assets/icons/linear/svg/arrow-right.svg
+  SvgGenImage get arrowRight => const SvgGenImage('assets/icons/linear/svg/arrow-right.svg');
+
+  /// File path: assets/icons/linear/svg/calendar.svg
+  SvgGenImage get calendar => const SvgGenImage('assets/icons/linear/svg/calendar.svg');
+
+  /// File path: assets/icons/linear/svg/clock.svg
+  SvgGenImage get clock => const SvgGenImage('assets/icons/linear/svg/clock.svg');
+
+  /// File path: assets/icons/linear/svg/close-circle.svg
+  SvgGenImage get closeCircle => const SvgGenImage('assets/icons/linear/svg/close-circle.svg');
+
+  /// File path: assets/icons/linear/svg/coins.svg
+  SvgGenImage get coins => const SvgGenImage('assets/icons/linear/svg/coins.svg');
+
+  /// File path: assets/icons/linear/svg/dollar-square.svg
+  SvgGenImage get dollarSquare => const SvgGenImage('assets/icons/linear/svg/dollar-square.svg');
 
   /// File path: assets/icons/linear/svg/edit.svg
   SvgGenImage get edit => const SvgGenImage('assets/icons/linear/svg/edit.svg');
@@ -80,11 +104,21 @@ class $AssetsIconsLinearSvgGen {
   /// File path: assets/icons/linear/svg/home.svg
   SvgGenImage get home => const SvgGenImage('assets/icons/linear/svg/home.svg');
 
+  /// File path: assets/icons/linear/svg/location.svg
+  SvgGenImage get location => const SvgGenImage('assets/icons/linear/svg/location.svg');
+
+  /// File path: assets/icons/linear/svg/people.svg
+  SvgGenImage get people => const SvgGenImage('assets/icons/linear/svg/people.svg');
+
+  /// File path: assets/icons/linear/svg/receipt-item.svg
+  SvgGenImage get receiptItem => const SvgGenImage('assets/icons/linear/svg/receipt-item.svg');
+
   /// File path: assets/icons/linear/svg/setting.svg
   SvgGenImage get setting => const SvgGenImage('assets/icons/linear/svg/setting.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [edit, home, setting];
+  List<SvgGenImage> get values =>
+      [archiveAdd, arrowRight, calendar, clock, closeCircle, coins, dollarSquare, edit, home, location, people, receiptItem, setting];
 }
 
 class Assets {

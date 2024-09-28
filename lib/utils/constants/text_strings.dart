@@ -39,7 +39,7 @@ class S {
   static const String createAccount = 'Create Account';
   static const String logIn = 'Log In';
   static const String alreadyHaveAnAccount = 'Already have an account?';
-  static const String dontHaveAnAccount = 'Don\'t have an account?';
+  static const String dontHaveAnAccount = "Don't have an account?";
   static const String orSignInWith = 'or sign in with';
   static const String or = 'or';
   static const String orSignUpWith = 'or sign up with';

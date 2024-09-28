@@ -26,7 +26,7 @@ class GeneratingPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 64),
                   child: CircularProgressIndicator(
-                    strokeWidth: 7,
+                    strokeWidth: 6.5,
                     color: CommonColors.primary,
                   ),
                 ),
