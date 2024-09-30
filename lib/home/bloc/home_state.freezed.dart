@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HomeState {
   bool get isLoading => throw _privateConstructorUsedError;
   MUser? get user => throw _privateConstructorUsedError;
+  List<MPopularSuggestion>? get popularSuggestion =>
+      throw _privateConstructorUsedError;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -31,7 +33,10 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({bool isLoading, MUser? user});
+  $Res call(
+      {bool isLoading,
+      MUser? user,
+      List<MPopularSuggestion>? popularSuggestion});
 }
 
 /// @nodoc
@@ -51,6 +56,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? isLoading = null,
     Object? user = freezed,
+    Object? popularSuggestion = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -61,6 +67,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as MUser?,
+      popularSuggestion: freezed == popularSuggestion
+          ? _value.popularSuggestion
+          : popularSuggestion // ignore: cast_nullable_to_non_nullable
+              as List<MPopularSuggestion>?,
     ) as $Val);
   }
 }
@@ -73,7 +83,10 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, MUser? user});
+  $Res call(
+      {bool isLoading,
+      MUser? user,
+      List<MPopularSuggestion>? popularSuggestion});
 }
 
 /// @nodoc
@@ -91,6 +104,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? user = freezed,
+    Object? popularSuggestion = freezed,
   }) {
     return _then(_$HomeStateImpl(
       isLoading: null == isLoading
@@ -101,6 +115,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as MUser?,
+      popularSuggestion: freezed == popularSuggestion
+          ? _value._popularSuggestion
+          : popularSuggestion // ignore: cast_nullable_to_non_nullable
+              as List<MPopularSuggestion>?,
     ));
   }
 }
@@ -108,17 +126,31 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeStateImpl implements _HomeState {
-  const _$HomeStateImpl({this.isLoading = false, this.user});
+  const _$HomeStateImpl(
+      {this.isLoading = false,
+      this.user,
+      final List<MPopularSuggestion>? popularSuggestion})
+      : _popularSuggestion = popularSuggestion;
 
   @override
   @JsonKey()
   final bool isLoading;
   @override
   final MUser? user;
+  final List<MPopularSuggestion>? _popularSuggestion;
+  @override
+  List<MPopularSuggestion>? get popularSuggestion {
+    final value = _popularSuggestion;
+    if (value == null) return null;
+    if (_popularSuggestion is EqualUnmodifiableListView)
+      return _popularSuggestion;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'HomeState(isLoading: $isLoading, user: $user)';
+    return 'HomeState(isLoading: $isLoading, user: $user, popularSuggestion: $popularSuggestion)';
   }
 
   @override
@@ -128,11 +160,14 @@ class _$HomeStateImpl implements _HomeState {
             other is _$HomeStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.user, user) || other.user == user));
+            (identical(other.user, user) || other.user == user) &&
+            const DeepCollectionEquality()
+                .equals(other._popularSuggestion, _popularSuggestion));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, user);
+  int get hashCode => Object.hash(runtimeType, isLoading, user,
+      const DeepCollectionEquality().hash(_popularSuggestion));
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -144,13 +179,17 @@ class _$HomeStateImpl implements _HomeState {
 }
 
 abstract class _HomeState implements HomeState {
-  const factory _HomeState({final bool isLoading, final MUser? user}) =
-      _$HomeStateImpl;
+  const factory _HomeState(
+      {final bool isLoading,
+      final MUser? user,
+      final List<MPopularSuggestion>? popularSuggestion}) = _$HomeStateImpl;
 
   @override
   bool get isLoading;
   @override
   MUser? get user;
+  @override
+  List<MPopularSuggestion>? get popularSuggestion;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.

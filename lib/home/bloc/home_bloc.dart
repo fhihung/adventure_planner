@@ -22,9 +22,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     final getToken = await storageService.getToken();
     final user = await homeController.getUser(getToken ?? '');
+    final popularSuggestion = await homeController.getPopularSuggestion();
     emit(
       state.copyWith(
         user: user,
+        popularSuggestion: popularSuggestion,
       ),
     );
   }
