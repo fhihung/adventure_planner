@@ -1,5 +1,6 @@
 import 'package:adventure_planner/home/screens/home_screen.dart';
 import 'package:adventure_planner/resources/generated/assets.gen.dart';
+import 'package:adventure_planner/setting/page/setting_page.dart';
 import 'package:adventure_planner/utils/constants/common_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,7 +19,7 @@ class _CommonBottomNavigationState extends State<CommonBottomNavigation> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    const HomeScreen(),
+    const SettingPage(),
     // const SettingScreen(),
   ];
 

@@ -1,12 +1,15 @@
 import 'dart:async';
 
+import 'package:adventure_planner/app/common_bottom_navigation.dart';
 import 'package:adventure_planner/login/bloc/login_event.dart';
 import 'package:adventure_planner/login/bloc/login_state.dart';
 import 'package:adventure_planner/login/controller/login_controller.dart';
+import 'package:adventure_planner/resources/generated/assets.gen.dart';
+import 'package:adventure_planner/utils/constants/common_colors.dart';
 import 'package:adventure_planner/utils/local_storage/storage_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:toastification/toastification.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(const LoginState()) {
@@ -77,30 +80,36 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       await storageService.saveUserId(
         user.id.toString(),
       );
-      await Fluttertoast.showToast(
-        msg: 'Login Successful',
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-        backgroundColor: Colors.green,
-        textColor: Colors.white,
-        fontSize: 16,
+      toastification.show(
+        type: ToastificationType.success,
+        style: ToastificationStyle.flatColored,
+        title: const Text('Login successfully'),
+        autoCloseDuration: const Duration(seconds: 2),
       );
-      // await Navigator.pushReplacement(
-      //   event.context,
-      //   MaterialPageRoute<void>(
-      //     builder: (context) => CommonBottomNavigation(),
-      //   ),
-      // );
+      await Navigator.push(
+        event.context,
+        MaterialPageRoute<void>(
+          builder: (context) => const PopScope(
+            canPop: false, // Chặn nút back và vuốt để quay lại
+            child: CommonBottomNavigation(),
+          ),
+        ),
+      );
     } else {
       final errorMessage = response.body['error'].toString();
       // Show Toast
-      await Fluttertoast.showToast(
-        msg: errorMessage,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 16,
+      toastification.show(
+        icon: Assets.icons.linear.svg.closeCircle.svg(
+          colorFilter: const ColorFilter.mode(
+            CommonColors.errorColor,
+            BlendMode.srcIn,
+          ),
+        ),
+        borderSide: const BorderSide(color: CommonColors.errorColor),
+        type: ToastificationType.error,
+        style: ToastificationStyle.flatColored,
+        title: Text(errorMessage),
+        autoCloseDuration: const Duration(seconds: 3),
       );
     }
   }

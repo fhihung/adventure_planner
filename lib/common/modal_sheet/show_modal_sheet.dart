@@ -27,6 +27,7 @@ class CommonModalSheet {
     required Widget child,
   }) {
     final modalRoute = ModalSheetRoute<void>(
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return DraggableSheet(
           child: ClipRRect(

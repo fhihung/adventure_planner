@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:adventure_planner/login/screens/login_screen.dart';
 import 'package:adventure_planner/login/widgets/login_form.dart';
 import 'package:adventure_planner/plan_generation/screens/complete_page.dart';
 import 'package:adventure_planner/plan_generation/screens/confirm_page.dart';
@@ -11,6 +10,7 @@ import 'package:adventure_planner/plan_generation/screens/location_page.dart';
 import 'package:adventure_planner/plan_generation/screens/quantity_day_page.dart';
 import 'package:adventure_planner/plan_generation/screens/trip_type_page.dart';
 import 'package:adventure_planner/sign_up/pages/sign_up_page.dart';
+import 'package:adventure_planner/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smooth_sheets/smooth_sheets.dart';
@@ -27,7 +27,7 @@ final router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const LoginScreen(),
+      builder: (context, state) => const SplashScreen(),
       routes: [_sheetShellRoute, _loginRoute, _signUpRoute],
     ),
   ],

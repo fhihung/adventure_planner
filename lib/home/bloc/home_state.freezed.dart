@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeState {
   bool get isLoading => throw _privateConstructorUsedError;
+  MUser? get user => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -30,7 +31,7 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({bool isLoading});
+  $Res call({bool isLoading, MUser? user});
 }
 
 /// @nodoc
@@ -49,12 +50,17 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? isLoading = null,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as MUser?,
     ) as $Val);
   }
 }
@@ -67,7 +73,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading});
+  $Res call({bool isLoading, MUser? user});
 }
 
 /// @nodoc
@@ -84,12 +90,17 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = null,
+    Object? user = freezed,
   }) {
     return _then(_$HomeStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as MUser?,
     ));
   }
 }
@@ -97,15 +108,17 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeStateImpl implements _HomeState {
-  const _$HomeStateImpl({this.isLoading = false});
+  const _$HomeStateImpl({this.isLoading = false, this.user});
 
   @override
   @JsonKey()
   final bool isLoading;
+  @override
+  final MUser? user;
 
   @override
   String toString() {
-    return 'HomeState(isLoading: $isLoading)';
+    return 'HomeState(isLoading: $isLoading, user: $user)';
   }
 
   @override
@@ -114,11 +127,12 @@ class _$HomeStateImpl implements _HomeState {
         (other.runtimeType == runtimeType &&
             other is _$HomeStateImpl &&
             (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading));
+                other.isLoading == isLoading) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading);
+  int get hashCode => Object.hash(runtimeType, isLoading, user);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -130,10 +144,13 @@ class _$HomeStateImpl implements _HomeState {
 }
 
 abstract class _HomeState implements HomeState {
-  const factory _HomeState({final bool isLoading}) = _$HomeStateImpl;
+  const factory _HomeState({final bool isLoading, final MUser? user}) =
+      _$HomeStateImpl;
 
   @override
   bool get isLoading;
+  @override
+  MUser? get user;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.

@@ -1,3 +1,4 @@
+import 'package:adventure_planner/utils/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_sheets/smooth_sheets.dart';
 
@@ -56,23 +57,13 @@ class BottomActionBar extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        secondLabel!,
-                        style: const TextStyle(
-                          color: Colors.black, // Black color for "Already have an account?"
-                          fontSize: 16,
-                        ),
-                      ),
+                      Text(secondLabel!, style: AppTextStyle.caption),
                       const SizedBox(width: 4), // Spacing between text and button
                       GestureDetector(
                         onTap: secondOnPressed,
                         child: Text(
                           secondText!, // Customizable tappable text
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor, // Blue color for tappable text
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: AppTextStyle.captionBold,
                         ),
                       ),
                     ],
