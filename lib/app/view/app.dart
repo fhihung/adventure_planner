@@ -19,6 +19,8 @@ class App extends StatelessWidget {
           }
         },
         child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          title: 'Adventure Planner',
           theme: AppThemes.lightTheme,
           darkTheme: AppThemes.darkTheme,
           routerConfig: router,

@@ -81,9 +81,12 @@ class HalfScreenSheet extends StatelessWidget {
     return SheetKeyboardDismissible(
       dismissBehavior: const SheetKeyboardDismissBehavior.onDragDown(),
       child: DraggableSheet(
-        maxExtent: const Extent.proportional(0.52),
-        initialExtent: const Extent.proportional(0.52),
-        minExtent: const Extent.proportional(0.52),
+        initialPosition: const SheetAnchor.proportional(0.52),
+        maxPosition: const SheetAnchor.proportional(0.52),
+        minPosition: const SheetAnchor.proportional(0.52),
+        // maxExtent: const Extent.proportional(0.52),
+        // initialExtent: const Extent.proportional(0.52),
+        // minExtent: const Extent.proportional(0.52),
         physics: const BouncingSheetPhysics(),
         child: ClipRRect(
           borderRadius: const BorderRadius.all(
