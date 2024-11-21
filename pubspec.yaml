@@ -15,7 +15,7 @@ dependencies:
   flutter_gen: ^5.7.0
   flutter_localizations:
     sdk: flutter
-  flutter_svg: ^2.0.10+1
+  flutter_svg: ^2.0.15
   fluttertoast: ^8.2.8
   freezed_annotation: ^2.4.4
   go_router: ^14.2.7
